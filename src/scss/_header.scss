@@ -1,0 +1,34 @@
+.header {
+    height: 70px;
+    background-color: #2278cf;
+
+    .logoBitCrud {
+        color: white;
+        margin: 0px;
+        font-size: 2em;
+        line-height: 70px;
+        float: left;
+    }
+
+    .userName {
+        text-align: center;
+        color: white;
+        line-height: 70px;
+    }
+
+    .navBarHeader {
+        
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    .postsHeader,
+    .aboutHeader {
+        float: right;
+        margin: 20px 10px;
+        height: 30px;
+        background-color: #2278cf;
+        color: white;
+        border: none;
+    }
+}
