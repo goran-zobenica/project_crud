@@ -45,23 +45,25 @@ class Dashboard extends React.Component {
         }
 
         return (
-            <div className='container' >
-                <h2>Dashboard</h2>
-                <div className='row'>
-                    <div className='dashboard col-xl-4' onClick={() => this.props.history.push('/posts')}>
-                        <img src={post} className="postPhoto" alt=""></img>
-                        <p> <Loading flag={this.state.loadingPosts} />{this.state.posts.length}</p>
-                        <p>Total posts</p>
-                    </div>
-                    <div className='dashboard col-xl-4'>
-                        <img src={text} className="textPhoto" alt=""></img>
-                        <p><Loading flag={this.state.loadingUsers} />{this.state.comments.length}</p>
-                        <p>Total comments</p>
-                    </div>
-                    <div className='dashboard col-xl-4'>
-                        <img src={users} className="usersPhoto" alt=""></img>
-                        <p><Loading flag={this.state.loadingComments} />{this.state.users.length}</p>
-                        <p>Users</p>
+            <div className='row' >
+                <div className="col">
+                    <h2>Dashboard</h2>
+                    <div className='row'>
+                        <div className='dashboard col-xl-4' onClick={() => this.props.history.push('/posts')}>
+                            <img src={post} className="postPhoto" alt=""></img>
+                            <p> <Loading flag={this.state.loadingPosts} />{this.state.posts.length}</p>
+                            <p>Total posts</p>
+                        </div>
+                        <div className='dashboard col-xl-4'>
+                            <img src={text} className="textPhoto" alt=""></img>
+                            <p><Loading flag={this.state.loadingUsers} />{this.state.comments.length}</p>
+                            <p>Total comments</p>
+                        </div>
+                        <div className='dashboard col-xl-4'>
+                            <img src={users} className="usersPhoto" alt=""></img>
+                            <p><Loading flag={this.state.loadingComments} />{this.state.users.length}</p>
+                            <p>Users</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,26 +6,26 @@ import { Link } from "react-router-dom";
 
 
 const Header = (props) => {
-    
-    let button1 = props.isLogged?"Dashboard":"Posts"
-    let button2 = props.isLogged?"My Posts":"About"
-    let link1 = props.isLogged?"/dashboard":"/posts"
-    let link2 = props.isLogged?"/myposts":"/about"
-    let user = props.isLogged?localStorage.getItem("userName"):""
+
+    let button1 = props.isLogged ? "Dashboard" : "Posts"
+    let button2 = props.isLogged ? "My Posts" : "About"
+    let link1 = props.isLogged ? "/dashboard" : "/posts"
+    let link2 = props.isLogged ? "/myposts" : "/about"
+    let user = props.isLogged ? `Logged as: ${localStorage.getItem("userName")}` : ""
 
     return (
-            <header className="header row">
-                <div className="col-xs-6 col-sm-4 col-md-4">
-                <span className='logoBitCrud'> BIT CRUD </span>
-                </div>
-                <div className="col-xs-6 col-sm-3 col-md-4">
-                <p className='userName'> {user} </p>
-                </div>
-                <div className='navBarHeader col-xs-12 col-sm-5 col-md-4'>
-                    <Link to={link2}><Button value={button2} className='aboutHeader' onClick={() => { return }} /></Link>
-                    <Link to={link1}><Button value={button1} className='postsHeader' onClick={() => { return }} /></Link>
-                </div>
-            </header>
+        <header className="header row">
+            <div className="col-sm-12 col-md-6">
+            <div className="userName">
+                <p>{user} </p>
+            </div>
+                <p className='logoBitCrud'> BIT CRUD </p>
+            </div>
+            <div className='navBarHeader col-sm-12 col-md-6'>
+                <Link to={link2}><Button value={button2} className='aboutHeader' onClick={() => { return }} /></Link>
+                <Link to={link1}><Button value={button1} className='postsHeader' onClick={() => { return }} /></Link>
+            </div>
+        </header>
     )
 }
 

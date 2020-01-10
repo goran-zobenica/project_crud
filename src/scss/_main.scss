@@ -1,6 +1,12 @@
 .main {
     flex: 1;
-    margin-bottom: 10%;
+}
+
+.mainCol {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .error{
