@@ -17,9 +17,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="container" >
-        <Header isLogged={this.state.isLogged} />
-        <Main isLogged={this.state.isLogged} changeLogStatus={this.changeLogStatus} />
-        <Footer isLogged={this.state.isLogged} changeLogStatus={this.changeLogStatus} />
+        <div className="col">
+          <Header isLogged={this.state.isLogged} />
+          <Main isLogged={this.state.isLogged} changeLogStatus={this.changeLogStatus} />
+          <Footer isLogged={this.state.isLogged} changeLogStatus={this.changeLogStatus} />
+        </div>
       </div>
     );
   }

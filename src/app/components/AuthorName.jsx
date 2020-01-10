@@ -1,6 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { searchUser } from '../../services/userServices'
+import { useEffect } from 'react';
 
+const AuthorName = props => {
+
+    const [authorName, setAuthorName] = useState(false);
+    useEffect(
+        () => {
+            searchUser(props.id).then(authorName => setAuthorName(authorName))
+
+        },[props.id])
+    if (!authorName) { return <div className="circleLoader"></div> }
+
+    return (
+        <span>{` ${authorName} `}</span>
+    )
+}
+
+/*
 class AuthorName extends React.Component {
     constructor(props) {
         super(props)
@@ -22,5 +39,5 @@ class AuthorName extends React.Component {
         )
     }
 }
-
+*/
 export default AuthorName

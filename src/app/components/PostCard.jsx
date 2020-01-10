@@ -17,7 +17,7 @@ const PostCard = (props) => {
                     <h4>{title}</h4>
                     <p>{subtitle}</p>
                     <hr></hr>
-                    <p>Author: <AuthorName id={userID} /> | Comments: <CommentsNumber id={id} /></p>
+                    <div>Author: <AuthorName id={userID} /> | Comments: <CommentsNumber id={id}/></div>
                 </div>
             </div>
         </div>

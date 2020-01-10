@@ -33,10 +33,9 @@ class Main extends React.Component {
     }
 }
 
-function PrivateRoute({ children, ...rest }) {
+function PrivateRoute({children}) {
     return (
         <Route
-            {...rest}
             render={() =>
                 localStorage.getItem('isLogged') ? (
                     children

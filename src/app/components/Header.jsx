@@ -15,13 +15,13 @@ const Header = (props) => {
 
     return (
             <header className="header row">
-                <div className="col-4">
+                <div className="col-xs-6 col-sm-4 col-md-4">
                 <span className='logoBitCrud'> BIT CRUD </span>
                 </div>
-                <div className="col-4">
+                <div className="col-xs-6 col-sm-3 col-md-4">
                 <p className='userName'> {user} </p>
                 </div>
-                <div className='navBarHeader col-4'>
+                <div className='navBarHeader col-xs-12 col-sm-5 col-md-4'>
                     <Link to={link2}><Button value={button2} className='aboutHeader' onClick={() => { return }} /></Link>
                     <Link to={link1}><Button value={button1} className='postsHeader' onClick={() => { return }} /></Link>
                 </div>
