@@ -1,17 +1,17 @@
 import React from 'react';
 import Button from './Button'
-import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
+const Header = () => {
 
+const isLogged= !!localStorage.getItem("isLogged");
 
-const Header = (props) => {
-
-    let button1 = props.isLogged ? "Dashboard" : "Posts"
-    let button2 = props.isLogged ? "My Posts" : "About"
-    let link1 = props.isLogged ? "/dashboard" : "/posts"
-    let link2 = props.isLogged ? "/myposts" : "/about"
-    let user = props.isLogged ? `Logged as: ${localStorage.getItem("userName")}` : ""
+    
+    let button1 = isLogged ? "Dashboard" : "Posts"
+    let button2 = isLogged ? "My Posts" : "About"
+    let link1 = isLogged ? "/dashboard" : "/posts"
+    let link2 = isLogged ? "/myposts" : "/about"
+    let user = isLogged ? `Logged as: ${localStorage.getItem("userName")}` : ""
 
     return (
         <header className="header row">
@@ -22,11 +22,11 @@ const Header = (props) => {
                 <p className='logoBitCrud'> BIT CRUD </p>
             </div>
             <div className='navBarHeader col-sm-12 col-md-6'>
-                <Link to={link2}><Button value={button2} className='aboutHeader' onClick={() => { return }} /></Link>
-                <Link to={link1}><Button value={button1} className='postsHeader' onClick={() => { return }} /></Link>
+                <Link to={link2}><Button value={button2} className='aboutHeader' onClick={() => { }} /></Link>
+                <Link to={link1}><Button value={button1} className='postsHeader' onClick={() => { }} /></Link>
             </div>
         </header>
     )
 }
 
-export default withRouter(Header)
+export default Header

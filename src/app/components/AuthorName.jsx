@@ -2,42 +2,30 @@ import React, {useState} from 'react'
 import { searchUser } from '../../services/userServices'
 import { useEffect } from 'react';
 
-const AuthorName = props => {
+// Displays author name ( it is false by default displaying loader until it gets the name from userService ) 
 
+const AuthorName = props => {
     const [authorName, setAuthorName] = useState(false);
+
+
+// On every props update it checks for the author name
+
     useEffect(
         () => {
             searchUser(props.id).then(authorName => setAuthorName(authorName))
-
         },[props.id])
+
+
+// Displays loader animation while fetching author name
+
     if (!authorName) { return <div className="circleLoader"></div> }
+
+    
+//Renders author name to display
 
     return (
         <span>{` ${authorName} `}</span>
     )
 }
 
-/*
-class AuthorName extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            authorName: "loading"
-        }
-    }
-
-    componentDidMount() {
-        searchUser(this.props.id)
-            .then(authorName => this.setState({ authorName }))
-    }
-
-    render() {
-        if (this.state.authorName==="loading") {return <div className="circleLoader"></div>}
-        
-        return (
-            <span>{` ${this.state.authorName} `}</span>
-        )
-    }
-}
-*/
 export default AuthorName
